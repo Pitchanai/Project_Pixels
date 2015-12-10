@@ -9,20 +9,31 @@ public class Resource {
 	public static final int SCREEN_WIDTH = 960;
 	public static final int SCREEN_HEIGHT = 540;
 	
-	public static BufferedImage playBackground;
+	public static BufferedImage playBackground = getImage("res/playBackground.jpg");
 	
 	public Resource() {
 		super();
 	}
-	static {
+	
+	private static BufferedImage getImage(String directory) {
 		try {
 			ClassLoader loader = Resource.class.getClassLoader();
-			playBackground = ImageIO.read(loader.getResource("res/playBackground.jpg"));
-		} catch (IOException e) {
-			playBackground = null;
-			System.out.println("Image load fail.");
-			
+			return ImageIO.read(loader.getResource(directory));
+		} catch (Exception e) {
+			return null;
 		}
 	}
+	
+//	static {
+//		try {
+//			ClassLoader loader = Resource.class.getClassLoader();
+//			playBackground = ImageIO.read(loader.getResource("res/playBackground.jpg"));
+//			System.out.println("Image load succeed.");
+//		} catch (IOException e) {
+//			playBackground = null;
+//			System.out.println("Image load fail.");
+//			
+//		}
+//	}
 
 }

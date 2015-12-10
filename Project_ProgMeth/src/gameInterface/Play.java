@@ -6,36 +6,27 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
-import javax.imageio.ImageIO;
 import javax.swing.JComponent;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import utility.Resource;
 
-public class Play extends JPanel {
+public class Play extends JComponent {
 	
-	private static BufferedImage Image;
+	private static BufferedImage image;
 	
 	public Play() {
+		super();
 		this.setPreferredSize(new Dimension(960, 540));
-		this.setDoubleBuffered(true);
+		setDoubleBuffered(true);
+		image = Resource.playBackground;
 	}
 	
-	protected void painComponent(Graphics g) {
+	public void paintComponent(Graphics g) {
 		super.paintComponents(g);
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.clearRect(0, 0, this.getWidth(), this.getHeight());
-		g.drawImage(Resource.playBackground, 0, 0, null);
-		
-		try {
-			ClassLoader loader = Play.class.getClassLoader();
-			Image = Resource.playBackground;
-		} catch (Exception e) {
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, "Picture file not found!", "Error", JOptionPane.ERROR_MESSAGE);
-			Image = null;
-		}
+		g2d.setBackground(Color.BLACK);
+		g2d.drawImage(image, null, 0, 0);
 	}
 	
 

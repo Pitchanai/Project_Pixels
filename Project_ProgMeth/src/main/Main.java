@@ -6,13 +6,24 @@ import gameInterface.Play;
 
 public class Main {
 	public static void main(String[] args) {
+		JFrame frame = new JFrame("Pixel");
 		Play testScreen = new Play();
-		JFrame f = new JFrame("Pixel");
-		f.setResizable(false);
-		f.add(testScreen);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		f.pack();
-		f.setVisible(true);
+		
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.add(testScreen);
+		frame.pack();
+		frame.setVisible(true);
+		testScreen.requestFocus();
+		
+		while (true) {
+			testScreen.requestFocus();
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			testScreen.repaint();
+		}
 	}
 
 }
