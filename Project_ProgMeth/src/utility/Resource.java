@@ -21,6 +21,7 @@ public class Resource {
 		} catch (IOException e) {
 			playBackground = null;
 			System.out.println("Image load fail.");
+			
 		}
 	}
 
