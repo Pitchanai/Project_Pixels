@@ -1,6 +1,6 @@
 package utility;
 
-public class numberFormat {
+public class NumberFormat {
 	public static String toString(int number) {
 		String format = number + "";
 		String output = "";
