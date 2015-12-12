@@ -2,12 +2,13 @@ package main;
 
 import javax.swing.JFrame;
 
+import gameInterface.Home;
 import gameInterface.Play;
 
 public class Main {
 	public static void main(String[] args) {
 		JFrame frame = new JFrame("Pixel");
-		Play testScreen = new Play();
+		Home testScreen = new Home();
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setResizable(false);

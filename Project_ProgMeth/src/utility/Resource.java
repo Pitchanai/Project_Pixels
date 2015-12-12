@@ -1,5 +1,7 @@
 package utility;
 
+import java.applet.Applet;
+import java.applet.AudioClip;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.FontFormatException;
@@ -7,9 +9,13 @@ import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 
 import shape.Shape;
 
@@ -47,6 +53,11 @@ public class Resource {
 	public static Color arcticGreen = new Color(0x648589);
 	public static Color orange = new Color(0xeb9587);
 	
+	//sound
+	public static URL homesound = getSound("res/sound/homesound.mp3");
+	public static URL playsound = getSound("res/sound/playsound.mp3");
+	public static URL scoresound = getSound("res/sound/scoresound.wav");
+	
 	
 	public Resource() {
 		super();
@@ -72,5 +83,14 @@ public class Resource {
 			return null;
 		}
 		
+	}
+	
+	public static URL getSound(String directory){
+		try {
+			ClassLoader loader = Resource.class.getClassLoader();
+			return loader.getResource(directory);
+		} catch (Exception except) {
+			return null;
+		}
 	}
 }
