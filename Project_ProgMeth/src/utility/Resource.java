@@ -32,7 +32,7 @@ public class Resource {
 	public static Color pink = new Color(0xf6cac9);
 	public static Color silverGrey = new Color(0xc0b7af);
 	public static Color green = new Color(0xb6ba99);
-	public static Color purple = new Color(0xa4777e);
+	public static Color purple = new Color(0xb2677a);
 	public static Color yellow = new Color(0xddbf5e);
 	public static Color creme = new Color(0xceb799);
 	public static Color opalBlue = new Color(0xc3ddd6);

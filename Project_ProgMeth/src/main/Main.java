@@ -10,6 +10,7 @@ public class Main {
 		Play testScreen = new Play();
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setResizable(false);
 		frame.add(testScreen);
 		frame.pack();
 		frame.setVisible(true);
@@ -18,11 +19,12 @@ public class Main {
 		while (true) {
 			testScreen.requestFocus();
 			try {
-				Thread.sleep(20);
+				Thread.sleep(100);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 			testScreen.repaint();
+			testScreen.updateField();
 		}
 	}
 
