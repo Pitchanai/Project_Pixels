@@ -9,12 +9,20 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
+import javafx.scene.*;
+
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineUnavailableException;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import javazoom.jlgui.basicplayer.BasicPlayer;
+import javazoom.jlgui.basicplayer.BasicPlayerException;
 import utility.Resource;
 
 public class Home extends JPanel {
@@ -22,11 +30,19 @@ public class Home extends JPanel {
 	private BufferedImage start, highScore, howToPlay;
 	private Point startPoint, highScorePoint, howToPlayPoint;
 	private boolean isStart, isHighScore, isHowToPlay;
-	
+	private BasicPlayer player;
 
 	public Home() {
 		this.setVisible(true);
 		setPreferredSize(new Dimension(960, 540));
+		
+		player = new BasicPlayer();
+		try{
+			player.open(Resource.homesound);
+			player.play();
+		}catch (BasicPlayerException e) {
+		    e.printStackTrace();
+		}
 
 		start = Resource.start1;
 		startPoint = new Point(Resource.SCREEN_WIDTH / 2 - (180 / 2), Resource.SCREEN_HEIGHT / 2 + 50);
@@ -38,7 +54,7 @@ public class Home extends JPanel {
 		howToPlayPoint = new Point(Resource.SCREEN_WIDTH / 2 + (105), Resource.SCREEN_HEIGHT / 2 + 50);
 		
 		addMouseListener(new MouseAdapter() {
-
+			
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (start != null && startPoint != null) {
@@ -47,7 +63,12 @@ public class Home extends JPanel {
 							start.getWidth(), start.getHeight()));
 					if (bounds.contains(st)) {
 						pushStart();
-						
+						try {
+							player.stop();
+						} catch (BasicPlayerException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 					}
 				}
 				if (howToPlay != null && howToPlayPoint != null) {
@@ -93,7 +114,7 @@ public class Home extends JPanel {
 		Graphics g = getGraphics();
 		super.paintComponents(g);
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(Resource.start2, null, Resource.SCREEN_WIDTH / 2 - (180 / 2), Resource.SCREEN_HEIGHT / 2 + 50 + 7);
+		g2d.drawImage(Resource.start2, null, Resource.SCREEN_WIDTH / 2 - (180 / 2), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
 			Thread.sleep(150);
 		} catch (InterruptedException e1) {
@@ -108,7 +129,7 @@ public class Home extends JPanel {
 		Graphics g = getGraphics();
 		super.paintComponents(g);
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(Resource.highscore2, null, Resource.SCREEN_WIDTH / 2 - (105 * 2), Resource.SCREEN_HEIGHT / 2 + 50 + 7);
+		g2d.drawImage(Resource.highscore2, null, Resource.SCREEN_WIDTH / 2 - (105 * 2), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
 			Thread.sleep(150);
 		} catch (InterruptedException e1) {
@@ -123,7 +144,7 @@ public class Home extends JPanel {
 		Graphics g = getGraphics();
 		super.paintComponents(g);
 		Graphics2D g2d = (Graphics2D) g;
-		g2d.drawImage(Resource.howtoplay2, null, Resource.SCREEN_WIDTH / 2 + (105), Resource.SCREEN_HEIGHT / 2 + 50 + 7);
+		g2d.drawImage(Resource.howtoplay2, null, Resource.SCREEN_WIDTH / 2 + (105), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
 			Thread.sleep(150);
 		} catch (InterruptedException e1) {
