@@ -19,9 +19,17 @@ public class Resource {
 	
 	// image
 	public static BufferedImage playBackground = getImage("res/play/playBackground.jpg");
-	public static BufferedImage homeBackground;
+	public static BufferedImage homeBackground = getImage("res/home/background.jpg");
 	public static BufferedImage highscoreBackground;
 	public static BufferedImage howToPlayBackground;
+	
+	//button
+	public static BufferedImage start1 = getImage("res/home/start1.png");
+	public static BufferedImage start2 = getImage("res/home/start2.png");
+	public static BufferedImage highscore1 = getImage("res/home/highscore1.png");
+	public static BufferedImage highscore2 = getImage("res/home/highscore2.png");
+	public static BufferedImage howtoplay1 = getImage("res/home/howtoplay1.png");
+	public static BufferedImage howtoplay2 = getImage("res/home/howtoplay2.png");
 	
 	// font
 	public static Font TH_Sarabun_New = new Font(registerFont("res/font/THSarabunNew.ttf", "TH Sarabun New"), Font.PLAIN, 70);
