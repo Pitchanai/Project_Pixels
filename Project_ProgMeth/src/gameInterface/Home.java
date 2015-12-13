@@ -149,7 +149,7 @@ public class Home extends JPanel {
 	
 		// logo Image
 		g2d.drawImage(Resource.newlogo1, null, Resource.SCREEN_WIDTH / 2 - (636 / 2), 50);
-		logo();
+		//logo();
 		
 		
 	}
@@ -197,7 +197,7 @@ public class Home extends JPanel {
 		
 		g2d.drawImage(Resource.start2, null, Resource.SCREEN_WIDTH / 2 - (180 / 2), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
-			Thread.sleep(50);
+			Thread.sleep(30);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -205,7 +205,7 @@ public class Home extends JPanel {
 		
 		g2d.drawImage(start, null, Resource.SCREEN_WIDTH / 2 - (180 / 2), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
-			Thread.sleep(500);
+			Thread.sleep(70);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -214,6 +214,7 @@ public class Home extends JPanel {
 		//if(Main.homeToPlay == true){
 		Main.frame.getContentPane().removeAll();
 		Main.frame.setContentPane(Main.play);
+		Main.play.requestFocus();
 		Main.frame.revalidate();
 		//}
 		
@@ -230,7 +231,7 @@ public class Home extends JPanel {
 		
 		g2d.drawImage(Resource.highscore2, null, Resource.SCREEN_WIDTH / 2 - (105 * 2), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
-			Thread.sleep(50);
+			Thread.sleep(30);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -238,7 +239,7 @@ public class Home extends JPanel {
 		
 		g2d.drawImage(Resource.highscore1, null, Resource.SCREEN_WIDTH / 2 - (105 * 2), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
-			Thread.sleep(500);
+			Thread.sleep(70);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -247,6 +248,7 @@ public class Home extends JPanel {
 		//if(Main.homeToHigh == true){
 		Main.frame.getContentPane().removeAll();
 		Main.frame.setContentPane(Main.high);
+		Main.high.requestFocus();
 		Main.frame.revalidate();
 		//}
 		
@@ -262,7 +264,7 @@ public class Home extends JPanel {
 		
 		g2d.drawImage(Resource.howtoplay2, null, Resource.SCREEN_WIDTH / 2 + (105), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
-			Thread.sleep(50);
+			Thread.sleep(30);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -270,7 +272,7 @@ public class Home extends JPanel {
 		
 		g2d.drawImage(Resource.howtoplay1, null, Resource.SCREEN_WIDTH / 2 + (105), Resource.SCREEN_HEIGHT / 2 + 50);
 		try {
-			Thread.sleep(500);
+			Thread.sleep(70);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -279,6 +281,7 @@ public class Home extends JPanel {
 		//if(Main.homeToHow == true){
 		Main.frame.getContentPane().removeAll();
 		Main.frame.setContentPane(Main.how);
+		Main.how.requestFocus();
 		Main.frame.revalidate();
 		//}
 		

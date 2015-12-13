@@ -42,6 +42,8 @@ public class Resource {
 	public static BufferedImage howtoplay2 = getImage("res/home/howtoplay2.png");
 	public static BufferedImage backhome1 = getImage("res/highscore/backhome1.png");
 	public static BufferedImage backhome2 = getImage("res/highscore/backhome2.png");
+	public static BufferedImage htbackhome1 = getImage("res/howtoplay/backhome1.png");
+	public static BufferedImage htbackhome2 = getImage("res/howtoplay/backhome2.png");
 	public static BufferedImage replay1 = getImage("res/play/replay1.png");
 	public static BufferedImage replay2 = getImage("res/home/replay1.png");
 	

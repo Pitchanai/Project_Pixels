@@ -32,7 +32,7 @@ public class HowToPlay extends JPanel {
 			}catch (BasicPlayerException e) {
 				e.printStackTrace();
 			}
-		back = Resource.backhome1;
+		back = Resource.htbackhome1;
 		backPoint = new Point(30, Resource.SCREEN_HEIGHT - 120);
 		addMouseListener(new MouseAdapter() {
 			
@@ -66,7 +66,7 @@ public class HowToPlay extends JPanel {
 		g2d.drawImage(Resource.howToPlayBackground, null, 0, 0);
 		
 		// backhome Button
-		g2d.drawImage(Resource.backhome1, null, 30, Resource.SCREEN_HEIGHT - 120);
+		g2d.drawImage(Resource.htbackhome1, null, 30, Resource.SCREEN_HEIGHT - 120);
 	}
 	
 	private void pushBack() {
@@ -76,17 +76,17 @@ public class HowToPlay extends JPanel {
 		super.paintComponents(g);
 		Graphics2D g2d = (Graphics2D) g;
 		
-		g2d.drawImage(Resource.backhome2, null, 30, Resource.SCREEN_HEIGHT - 120);
+		g2d.drawImage(Resource.htbackhome2, null, 30, Resource.SCREEN_HEIGHT - 120);
 		try {
-			Thread.sleep(50);
+			Thread.sleep(30);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
-		g2d.drawImage(Resource.backhome1, null, 30, Resource.SCREEN_HEIGHT - 120);
+		g2d.drawImage(Resource.htbackhome1, null, 30, Resource.SCREEN_HEIGHT - 120);
 		try {
-			Thread.sleep(500);
+			Thread.sleep(70);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -95,6 +95,7 @@ public class HowToPlay extends JPanel {
 		//if(Main.highToHome == true){
 		Main.frame.getContentPane().removeAll();
 		Main.frame.setContentPane(Main.home);
+		Main.home.requestFocus();
 		Main.frame.revalidate();
 		//}
 		

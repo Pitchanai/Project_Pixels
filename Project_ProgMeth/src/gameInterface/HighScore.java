@@ -83,7 +83,7 @@ public class HighScore extends JPanel{
 		
 		g2d.drawImage(Resource.backhome2, null, 30, Resource.SCREEN_HEIGHT - 120);
 		try {
-			Thread.sleep(50);
+			Thread.sleep(30);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -91,7 +91,7 @@ public class HighScore extends JPanel{
 		
 		g2d.drawImage(Resource.backhome1, null, 30, Resource.SCREEN_HEIGHT - 120);
 		try {
-			Thread.sleep(500);
+			Thread.sleep(70);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -100,6 +100,7 @@ public class HighScore extends JPanel{
 		//if(Main.highToHome == true){
 		Main.frame.getContentPane().removeAll();
 		Main.frame.setContentPane(Main.home);
+		Main.home.requestFocus();
 		Main.frame.revalidate();
 		//}
 		

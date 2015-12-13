@@ -25,13 +25,14 @@ public class Main extends JFrame{
 		frame = new JFrame("Pixel");
 		frame.setContentPane(home);
 		frame.revalidate();
+		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
 		home.requestFocus();
 	
 		
-		while (frame.isVisible()) {
+		while (frame.isVisible() && home.requestFocus(true)) {
 			home.requestFocus();
 			try {
 				Thread.sleep(20);
@@ -39,6 +40,36 @@ public class Main extends JFrame{
 				e.printStackTrace();
 			}
 			home.repaint();
+		}
+		
+		while (frame.isVisible() && high.requestFocus(true)) {
+			high.requestFocus();
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			high.repaint();
+		}
+		
+		while (frame.isVisible() && how.requestFocus(true)) {
+			how.requestFocus();
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			how.repaint();
+		}
+		
+		while (frame.isVisible() && play.requestFocus(true)) {
+			play.requestFocus();
+			try {
+				Thread.sleep(20);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			play.repaint();
 		}
 		
 	}
