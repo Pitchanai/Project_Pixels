@@ -26,9 +26,13 @@ public class Resource {
 	// image
 	public static BufferedImage playBackground = getImage("res/play/playBackground.jpg");
 	public static BufferedImage homeBackground = getImage("res/home/background.jpg");
-	public static BufferedImage highscoreBackground;
-	public static BufferedImage howToPlayBackground;
-	
+	public static BufferedImage highscoreBackground = getImage("res/highscore/hsbackground.jpg");
+	public static BufferedImage howToPlayBackground = getImage("res/howtoplay/htbackground.jpg");
+	public static BufferedImage newlogo1 = getImage("res/home/newlogo1.png");
+	public static BufferedImage newlogo2 = getImage("res/home/newlogo2.png");
+	public static BufferedImage newlogo3 = getImage("res/home/newlogo3.png");
+	public static BufferedImage newlogo4 = getImage("res/home/newlogo4.png");
+
 	//button
 	public static BufferedImage start1 = getImage("res/home/start1.png");
 	public static BufferedImage start2 = getImage("res/home/start2.png");
@@ -36,6 +40,10 @@ public class Resource {
 	public static BufferedImage highscore2 = getImage("res/home/highscore2.png");
 	public static BufferedImage howtoplay1 = getImage("res/home/howtoplay1.png");
 	public static BufferedImage howtoplay2 = getImage("res/home/howtoplay2.png");
+	public static BufferedImage backhome1 = getImage("res/highscore/backhome1.png");
+	public static BufferedImage backhome2 = getImage("res/highscore/backhome2.png");
+	public static BufferedImage replay1 = getImage("res/play/replay1.png");
+	public static BufferedImage replay2 = getImage("res/home/replay1.png");
 	
 	// font
 	public static Font TH_Sarabun_New = new Font(registerFont("res/font/THSarabunNew.ttf", "TH Sarabun New"), Font.PLAIN, 70);
@@ -57,7 +65,7 @@ public class Resource {
 	public static URL homesound = getSound("res/sound/homesound.mp3");
 	public static URL playsound = getSound("res/sound/playsound.mp3");
 	public static URL scoresound = getSound("res/sound/scoresound.wav");
-	
+	public static URL clicksound = getSound("res/sound/clicksound.wav");
 	
 	public Resource() {
 		super();
